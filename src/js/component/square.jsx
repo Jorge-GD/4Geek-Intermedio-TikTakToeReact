@@ -10,17 +10,12 @@ const Square = props => {
 			className="iAmSquare"
 			onClick={() => {
 				if (on == true) {
-					let x = props.whoGoes(props.player);
+					let x = props.whoGoes(props.player, props.id);
 					let y = props.cIcon(x);
 					setLetter(y);
 					setOn(false);
 				}
-			}}
-			onHover={
-
-				setLetter(y);
-
-			}>
+			}}>
 			{letter}
 		</div>
 	);
@@ -29,7 +24,7 @@ const Square = props => {
 Square.propTypes = {
 	cIcon: PropTypes.func,
 	whoGoes: PropTypes.func,
-	player: PropTypes.number,
+	player: PropTypes.bool,
 	id: PropTypes.number
 };
 
